@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Way Back</title>
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --accent: #e10600;
+      --text: #e5e5e5;
+      --muted: #9a9a9a;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: "Courier New", monospace;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #141414, var(--bg));
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .container {
+      max-width: 520px;
+      width: 100%;
+      background: rgba(20, 20, 20, 0.85);
+      border: 1px solid #222;
+      border-radius: 14px;
+      padding: 2rem 1.75rem;
+      box-shadow: 0 0 40px rgba(225, 6, 0, 0.15);
+      text-align: center;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      margin: 0.5rem 0 0.75rem;
+      letter-spacing: 1px;
+    }
+
+    .warning {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 1.75rem;
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 320px;
+      padding: 0.9rem 1.2rem;
+      background: linear-gradient(135deg, var(--accent), #ff3b3b);
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 10px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 0 20px rgba(225, 6, 0, 0.4);
+    }
+
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(225, 6, 0, 0.7);
+    }
+
+    .download-btn:active {
+      transform: translateY(0);
+    }
+
+    .meta {
+      margin-top: 1.5rem;
+      font-size: 0.75rem;
+      color: #6f6f6f;
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .glitch {
+      position: relative;
+      display: inline-block;
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      color: var(--accent);
+      background: transparent;
+      clip: rect(0, 0, 0, 0);
+    }
+
+    .glitch::before {
+      animation: glitchTop 2.5s infinite linear alternate-reverse;
+    }
+
+    .glitch::after {
+      animation: glitchBottom 1.8s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitchTop {
+      0% { clip: rect(0, 9999px, 0, 0); }
+      20% { clip: rect(0, 9999px, 8px, 0); }
+      40% { clip: rect(0, 9999px, 0, 0); }
+      60% { clip: rect(0, 9999px, 6px, 0); }
+      100% { clip: rect(0, 9999px, 0, 0); }
+    }
+
+    @keyframes glitchBottom {
+      0% { clip: rect(0, 9999px, 0, 0); }
+      25% { clip: rect(10px, 9999px, 18px, 0); }
+      50% { clip: rect(0, 9999px, 0, 0); }
+      75% { clip: rect(12px, 9999px, 20px, 0); }
+      100% { clip: rect(0, 9999px, 0, 0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 1.5rem 1.25rem;
+      }
+
+      .meta {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="glitch" data-text="Babymane x WeWantWraiths – Way Back">Babymane x WeWantWraiths – Way Back</h1>
+
+    <p class="warning" style="margin-bottom: 1.25rem; color: #7a7a7a;">
+      You may never see this again.
+    </p>
+
+    <!-- Replace href with your actual audio file -->
+    <a class="download-btn" href="Babymane x WeWantWraiths - Way Back.mp3" download>
+      ⬇ DOWNLOAD
+    </a>
+
+    <div class="meta">
+      <span>Format: MP3</span>
+      <span>Status: Available</span>
+      <span>Mirror: 1/1</span>
+    </div>
+  </div>
+</body>
+</html>
